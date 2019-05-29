@@ -1,20 +1,19 @@
 package com.tumakha.currency.actor
 
-import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
+import akka.actor.{ Actor, ActorLogging, ActorSystem, Props }
 import akka.pattern.pipe
-import com.tumakha.currency.actor.Currency.{Currency, EUR, GBP}
+import com.tumakha.currency.actor.Currency.{ Currency, EUR, GBP }
 import com.tumakha.currency.rates.ExchangeRatesAPI
 import com.tumakha.currency.util.MathUtil.round
 
-import scala.concurrent.{ExecutionContext, Future}
+import scala.concurrent.{ ExecutionContext, Future }
 
 /**
  * @author Yuriy Tumakha
  */
 object Currency extends Enumeration {
   type Currency = Value
-  val EUR, BGN, NZD, ILS, RUB, CAD, USD, PHP, CHF, ZAR, AUD, JPY, TRY, HKD, MYR, THB, HRK, NOK, IDR, DKK, CZK, HUF,
-  GBP, MXN, KRW, ISK, SGD, BRL, PLN, INR, RON, CNY, SEK = Value
+  val EUR, BGN, NZD, ILS, RUB, CAD, USD, PHP, CHF, ZAR, AUD, JPY, TRY, HKD, MYR, THB, HRK, NOK, IDR, DKK, CZK, HUF, GBP, MXN, KRW, ISK, SGD, BRL, PLN, INR, RON, CNY, SEK = Value
 
   def contains(name: String): Boolean = values.exists(_.toString == name)
 

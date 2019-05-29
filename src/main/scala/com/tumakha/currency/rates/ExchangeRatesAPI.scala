@@ -8,7 +8,7 @@ import com.tumakha.currency.actor.Currency
 import com.tumakha.currency.actor.Currency.Currency
 import com.tumakha.currency.cache.RateCache
 
-import scala.concurrent.{ExecutionContext, Future}
+import scala.concurrent.{ ExecutionContext, Future }
 
 /**
  * @author Yuriy Tumakha

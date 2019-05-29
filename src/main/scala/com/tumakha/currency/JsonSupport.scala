@@ -2,8 +2,8 @@ package com.tumakha.currency
 
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
 import com.tumakha.currency.actor.Currency.Currency
-import com.tumakha.currency.actor.{ConversionResult, ConvertMoney, Currency, Error}
-import spray.json.{DefaultJsonProtocol, JsString, JsValue, JsonFormat, deserializationError}
+import com.tumakha.currency.actor.{ ConversionResult, ConvertMoney, Currency, Error }
+import spray.json.{ DefaultJsonProtocol, JsString, JsValue, JsonFormat, deserializationError }
 
 import scala.util.Try
 

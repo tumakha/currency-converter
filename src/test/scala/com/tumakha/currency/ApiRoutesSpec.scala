@@ -1,15 +1,15 @@
 package com.tumakha.currency
 
-import akka.actor.{ActorRef, Props}
+import akka.actor.{ ActorRef, Props }
 import akka.http.scaladsl.marshalling.Marshal
 import akka.http.scaladsl.model.ContentTypes.`application/json`
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import com.tumakha.currency.actor.Currency.{Currency, EUR, GBP}
-import com.tumakha.currency.actor.{ConversionResult, ConvertMoney, Error, MoneyExchangeActor}
+import com.tumakha.currency.actor.Currency.{ Currency, EUR, GBP }
+import com.tumakha.currency.actor.{ ConversionResult, ConvertMoney, Error, MoneyExchangeActor }
 import org.scalatest.concurrent.ScalaFutures
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 
 import scala.concurrent.Future
 

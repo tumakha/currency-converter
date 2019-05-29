@@ -11,7 +11,7 @@ import com.softwaremill.sttp._
 import com.softwaremill.sttp.akkahttp._
 import com.softwaremill.sttp.json4s._
 import org.json4s.jackson.JsonMethods
-import org.json4s.{DefaultFormats, Extraction}
+import org.json4s.{ DefaultFormats, Extraction }
 
 import scala.concurrent.Future
 import scala.concurrent.duration._

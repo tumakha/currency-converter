@@ -1,23 +1,23 @@
 package com.tumakha.currency
 
-import akka.actor.{ActorRef, ActorSystem}
+import akka.actor.{ ActorRef, ActorSystem }
 import akka.event.Logging
-import akka.http.scaladsl.model.{StatusCode, StatusCodes}
+import akka.http.scaladsl.model.{ StatusCode, StatusCodes }
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.directives.MethodDirectives.post
 import akka.http.scaladsl.server.directives.RouteDirectives.complete
-import akka.http.scaladsl.server.{MalformedRequestContentRejection, MethodRejection, RejectionHandler, Route, StandardRoute, ValidationRejection}
+import akka.http.scaladsl.server.{ MalformedRequestContentRejection, MethodRejection, RejectionHandler, Route, StandardRoute, ValidationRejection }
 import akka.pattern.ask
 import akka.util.Timeout
-import com.tumakha.currency.actor.{ConversionResult, ConvertMoney, Error}
+import com.tumakha.currency.actor.{ ConversionResult, ConvertMoney, Error }
 
 import scala.concurrent.duration._
 import scala.language._
-import scala.util.{Failure, Success}
+import scala.util.{ Failure, Success }
 
 /**
-  * @author Yuriy Tumakha
-  */
+ * @author Yuriy Tumakha
+ */
 trait ApiRoutes extends JsonSupport {
 
   // we leave these abstract, since they will be provided by the App
