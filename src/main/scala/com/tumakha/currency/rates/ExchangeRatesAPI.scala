@@ -29,7 +29,7 @@ class ExchangeRatesAPI(log: LoggingAdapter)(implicit system: ActorSystem, ec: Ex
     restClient.getJson[Rates](latestRatesUrl(baseCurrency)).map(_.body).map {
       case Left(error) => throw new IOException(error)
       case Right(result) =>
-        result.rates.filter(p => Currency.contains(p._1)) map { case (key, value) => Currency.withName(key) -> value }
+        result.rates collect { case (key, value) if Currency.contains(key) => Currency.withName(key) -> value }
     }
 
   def latestRate(from: Currency, to: Currency): Future[Double] =
